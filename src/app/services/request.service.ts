@@ -24,7 +24,7 @@ export class RequestService {
   }
 
   put(endpoint : string, id : string , object : any){
-    return this.http.put(`${endpoint}${endpoint}/${id}`, object)
+    return this.http.put(`${API_URL}${endpoint}/${id}`, object)
   }
 
   delete(endpoint : string, id : string){
