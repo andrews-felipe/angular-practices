@@ -20,7 +20,6 @@ export class SignUpComponent implements OnInit {
   viewAlert: boolean = false
   
   buttonDisable : boolean
-
   user : User = new User()
 
   constructor(private request: RequestService, private form: FormBuilder, private route: Router) { }

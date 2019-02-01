@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   /**
    * Primeiro método do componente : @loginForm recebe os campos de formBuilder
    */
+
   ngOnInit() {
     this.loginForm = this.form.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
