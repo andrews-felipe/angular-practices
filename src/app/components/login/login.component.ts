@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
   // Intância do formGroup para usar no DOM
   loginForm : FormGroup
 
+  // Variável para mensagens de alert
   message : string
+  // Variável booleana para mostrar o alert na tela
   viewAlert : boolean = false
   
   constructor(private auth : AuthService, private form : FormBuilder, private route : Router) { }
@@ -29,17 +31,24 @@ export class LoginComponent implements OnInit {
 
   }
 
+  /**
+   * Método para envio do email e senha para o método login no service auth, caso dê certo o usuário é redirecionado para a página home
+   */
   submit(){
-    console.log(this.loginForm.getRawValue())
     if(this.loginForm.valid){
       this.auth.login(this.loginForm.getRawValue()).toPromise().then(
-        ()=>{
-        console.log('Login is Success!!')
-        this.route.navigate(['home'])
+        (res)=>{   // resposta booleana definida no auth service método login 
+          if(res){
+            console.log('Login is Success!!')
+            this.route.navigate(['home'])    
+          }
+          else{
+            this.showMessage('Usuário ou Senha Inválidos!')
+          }
         }
       )
     }else{
-      this.showMessage('Preencha os campos corretamente')
+      this.showMessage('Preencha os campos corretamente!')
     }
   }
 

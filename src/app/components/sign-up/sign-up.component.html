@@ -1,0 +1,33 @@
+<div class="flex">
+
+    <div class="jumbotron">
+  
+      <form [formGroup]="signForm" (ngSubmit)="submit()" class="formGroup">
+  
+        <h4 class="text-center">Cadastro</h4>
+  
+        <div class="form-group">
+          <input formControlName="email" type="text" class="form-control" placeholder="Email">
+        </div>
+  
+        <div class="form-group">
+          <input formControlName="password" type="password" class="form-control" placeholder="Senha">
+        </div>
+
+        <div class="form-group">
+          <input formControlName="name" type="text" class="form-control" placeholder="Nome">
+        </div>
+  
+        <button [disabled]="buttonDisable" type="submit" class="btn btn-block btn-info">Cadastrar</button>
+  
+      </form>
+  
+    </div>
+  
+  
+    <div class="alert" *ngIf="viewAlert">
+      {{message}}
+    </div>
+  
+  
+  </div>

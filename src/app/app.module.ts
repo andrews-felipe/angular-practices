@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
 import { RequestService } from './services/request.service';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
@@ -20,7 +21,8 @@ import { RequestService } from './services/request.service';
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

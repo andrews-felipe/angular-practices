@@ -13,17 +13,19 @@ export class AuthService {
     
   }
   /**
-   * Método login, ( nesse caso ele  recebe a lista de usuários e percorre para tentar encontrar )
+   * Método login, (nesse caso ele  recebe a lista de usuários e percorre para tentar encontrar )
    */
   login(user : User){
     return this.http.get(USER).pipe(map(
       (res : Array<User>)=>{
+        let result = false
         for (let i = 0; i < res.length; i++) {
           if(res[i].email === user.email && res[i].password === user.password) { 
             localStorage.setItem("user", JSON.stringify(res[i].id))
-            return true
+            result = true
           }
         }
+        return result
       }
     ))
   }
@@ -42,9 +44,11 @@ export class AuthService {
     return localStorage.getItem("user")
   }
 
-
+  /**
+   * Remover o usuário do localStorage
+   */
   logOut(){
-
+    localStorage.removeItem("user")
   }
 
 

@@ -1,9 +1,28 @@
 {
-
-    "user" : [
-        {"id" : 1, "email" : "andrews@" , "avatar" : "", "name" : "Andrews", "matchs" : 0 }
-    ]
-
-
-    
+  "user": [
+    {
+      "id": 1,
+      "email": "andrews@admin.com",
+      "password": "123456",
+      "avatar": "",
+      "name": "Andrews",
+      "matchs": 0
+    },
+    {
+      "matchs": 0,
+      "avatar": "",
+      "email": "claudio@c.com",
+      "password": "123456",
+      "name": "Claudiano",
+      "id": 2
+    },
+    {
+      "matchs": 0,
+      "avatar": "",
+      "email": "louro@c.com",
+      "password": "12345",
+      "name": "Louro",
+      "id": 3
+    }
+  ]
 }
